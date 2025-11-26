@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GUNTUR PRAYOGO — Crypto & Web3</title>
+  <meta name="description" content="Guntur Prayogo — Crypto & Web3 • Trader • Content Creator" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-M9k5c7..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{
+      --bg1: #040617; /* deep space */
+      --bg2: #071025;
+      --accent: #00eaff;
+      --accent-2: #7b2eff;
+      --glass: rgba(255,255,255,0.03);
+      --muted: rgba(255,255,255,0.6);
+      --card-shadow: 0 8px 30px rgba(0,230,255,0.06);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e7f7ff}
+    body{
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(0,234,255,0.04), transparent 10%),
+                  linear-gradient(180deg,var(--bg1),var(--bg2));
+      display:flex;align-items:center;justify-content:center;padding:36px
+    }
+    .wrap{width:100%;max-width:720px;padding:28px;border-radius:22px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow: 0 10px 40px rgba(0,0,0,0.6);backdrop-filter: blur(6px)}
+    .top{display:flex;gap:18px;align-items:center}
+    .avatar{
+      width:96px;height:96px;border-radius:20px;flex:0 0 96px;overflow:hidden;border:2px solid rgba(0,234,255,0.14);box-shadow:0 6px 30px rgba(0,234,255,0.06);
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;color:#001;}
+    .meta{flex:1}
+    h1{margin:0;font-size:20px;letter-spacing:0.6px;color:var(--accent)}
+    p.bio{margin:6px 0 0; color:var(--muted)}
+
+    .actions{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .btn{
+      display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));border:1px solid rgba(0,234,255,0.06);text-decoration:none;color:var(--accent);font-weight:600;box-shadow:var(--card-shadow);transition: transform .15s ease, box-shadow .15s ease;position:relative;overflow:hidden
+    }
+    .btn .fa{width:26px;text-align:center}
+    .btn:hover{transform:translateY(-4px);box-shadow:0 12px 45px rgba(0,234,255,0.12)}
+    .btn .label{flex:1;text-align:left}
+    .btn .hint{font-size:12px;color:var(--muted)}
+
+    /* Glow accent */
+    .glow{position:absolute;right:-40px;top:-40px;width:160px;height:160px;background:radial-gradient(circle at 30% 30%, rgba(0,234,255,0.18), transparent 20%), radial-gradient(circle at 70% 70%, rgba(123,46,255,0.12), transparent 15%);filter:blur(30px);pointer-events:none}
+
+    /* QR & extra */
+    .extra{display:flex;gap:14px;align-items:center;margin-top:18px}
+    .qr{width:78px;height:78px;border-radius:10px;background:white;padding:6px;display:flex;align-items:center;justify-content:center}
+    .small{font-size:13px;color:var(--muted)}
+
+    footer{margin-top:20px;text-align:center;color:rgba(255,255,255,0.5);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:520px){.actions{grid-template-columns:1fr;}.top{flex-direction:column;align-items:flex-start}.avatar{width:88px;height:88px}}
+
+    /* Dark-mode toggle */
+    .toggle{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);cursor:pointer}
+
+    /* subtle animation for buttons */
+    .btn::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0));opacity:0;transition:opacity .25s}
+    .btn:hover::after{opacity:1}
+  </style>
+</head>
+<body>
+  <div class="wrap" id="page">
+    <div class="top">
+      <div class="avatar" id="avatar">GP</div>
+      <div class="meta">
+        <h1>GUNTUR PRAYOGO</h1>
+        <p class="bio">Crypto & Web3 Enthusiast • Trader • Content Creator — Follow for market updates, airdrops, & simple explainers.</p>
+        <div style="margin-top:10px;display:flex;gap:10px;align-items:center">
+          <div class="toggle" id="modeToggle" title="Toggle dark/light">
+            <i class="fa-regular fa-moon"></i>
+            <span class="small">Dark</span>
+          </div>
+          <div style="font-size:13px;color:var(--muted)">• Quick actions</div>
+        </div>
+      </div>
+      <div class="glow" aria-hidden="true"></div>
+    </div>
+
+    <div class="actions" style="margin-top:24px">
+      <!-- X / Twitter -->
+      <a class="btn" href="https://x.com/kuli_trader" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-x fa-lg" aria-hidden></i>
+        <div class="label">
+          <div>Follow Me on X</div>
+          <div class="hint">Crypto updates & threads</div>
+        </div>
+        <div style="font-size:12px;color:var(--muted);">Open</div>
+      </a>
+
+      <!-- Telegram -->
+      <a class="btn" href="https://t.co/eyNWMEZHu8" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-telegram fa-lg"></i>
+        <div class="label">
+          <div>Join My Telegram</div>
+          <div class="hint">Community & alerts</div>
+        </div>
+        <div style="font-size:12px;color:var(--muted);">Open</div>
+      </a>
+
+      <!-- Instagram -->
+      <a class="btn" href="https://www.instagram.com/gntrprygo" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-instagram fa-lg"></i>
+        <div class="label">
+          <div>Instagram</div>
+          <div class="hint">Personal moments</div>
+        </div>
+        <div style="font-size:12px;color:var(--muted);">Open</div>
+      </a>
+
+      <!-- Facebook -->
+      <a class="btn" href="https://www.facebook.com/gntrprygo" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-facebook fa-lg"></i>
+        <div class="label">
+          <div>Facebook Profile</div>
+          <div class="hint">Connect & messages</div>
+        </div>
+        <div style="font-size:12px;color:var(--muted);">Open</div>
+      </a>
+    </div>
+
+    <div class="extra">
+      <div style="flex:1">
+        <div style="font-weight:600;color:var(--accent)">Quick tools</div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <button class="btn" id="copyBtn" style="padding:10px 12px;gap:8px;"> 
+            <i class="fa-solid fa-link"></i>
+            <div class="label">Copy Page Link</div>
+          </button>
+          <button class="btn" id="emailBtn" style="padding:10px 12px;gap:8px;"> 
+            <i class="fa-regular fa-envelope"></i>
+            <div class="label">Email Me</div>
+          </button>
+        </div>
+      </div>
+
+      <div style="width:110px;text-align:center">
+        <div style="font-size:13px;color:var(--muted);margin-bottom:8px">Scan QR</div>
+        <div class="qr" id="qrWrap">
+          <img id="qrImg" src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=https%3A%2F%2Fgntrprygoo.github.io%2Fguntur-linktree%2F" alt="QR code" style="width:100%;height:100%;object-fit:contain;border-radius:8px" />
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div>Built with ❤️ — Crypto & Web3 theme</div>
+      <div style="margin-top:6px;font-size:12px;opacity:0.7">Replace avatar: edit <code>id=\"avatar\"</code> element or drop your image file and reference it in the HTML.</div>
+    </footer>
+  </div>
+
+  <script>
+    // Dark/light mode toggle (client-side only)
+    const page = document.getElementById('page');
+    const toggle = document.getElementById('modeToggle');
+    const modeLabel = toggle.querySelector('.small');
+    const avatar = document.getElementById('avatar');
+
+    function setMode(mode){
+      if(mode==='light'){
+        document.documentElement.style.setProperty('--bg1','#f6f8fb');
+        document.documentElement.style.setProperty('--bg2','#e9f0fb');
+        document.documentElement.style.setProperty('--muted','rgba(0,0,0,0.6)');
+        document.documentElement.style.setProperty('--accent','#0a7eff');
+        avatar.style.color='#fff';
+        modeLabel.textContent='Light';
+        localStorage.setItem('guntur-mode','light');
+      } else {
+        document.documentElement.style.setProperty('--bg1','#040617');
+        document.documentElement.style.setProperty('--bg2','#071025');
+        document.documentElement.style.setProperty('--muted','rgba(255,255,255,0.6)');
+        document.documentElement.style.setProperty('--accent','#00eaff');
+        avatar.style.color='#001';
+        modeLabel.textContent='Dark';
+        localStorage.setItem('guntur-mode','dark');
+      }
+    }
+    toggle.addEventListener('click', ()=>{
+      const current = localStorage.getItem('guntur-mode') || 'dark';
+      setMode(current==='dark' ? 'light' : 'dark');
+    });
+    // restore
+    setMode(localStorage.getItem('guntur-mode') || 'dark');
+
+    // Copy page link
+    document.getElementById('copyBtn').addEventListener('click', async ()=>{
+      try{
+        await navigator.clipboard.writeText(window.location.href);
+        alert('Link copied to clipboard!');
+      }catch(err){
+        prompt('Copy this link', window.location.href);
+      }
+    });
+
+    // Email quick open (replace with your email if you want)
+    document.getElementById('emailBtn').addEventListener('click', ()=>{
+      window.location.href = 'mailto:hello@example.com?subject=Hi%20Guntur';
+    });
+
+    // Allow replacing avatar with image by dropping file onto avatar
+    avatar.addEventListener('click', ()=>{
+      const url = prompt('Enter image URL for avatar (or leave blank to keep initials)');
+      if(url){ avatar.style.background = `url(${url}) center/cover`; avatar.textContent=''; }
+    });
+
+    // Make buttons accessible via keyboard
+    document.querySelectorAll('.btn').forEach(b=>{ b.setAttribute('tabindex',0); b.addEventListener('keypress', e=>{ if(e.key==='Enter') b.click(); }) });
+  </script>
+
+  <!--
+    How to use:
+    1) Copy this full file into your repository as index.html and commit.
+    2) Replace mailto email and avatar as needed.
+    3) GitHub Pages URL will be: https://USERNAME.github.io/REPO-NAME/
+
+    Notes:
+    - QR code uses Google Chart API. If you prefer an offline library, replace img source with your own generated PNG.
+    - To change accent color, edit --accent in :root.
+  -->
+</body>
+</html>
